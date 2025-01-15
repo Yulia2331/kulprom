@@ -37,5 +37,32 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'RodchenkoC', Helvetica, sans-serif;
+  font-family: 'RodchenkoC', 'VoxRound', sans-serif;
+}
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 19%;
+  min-width: 0;
+}
+.embla__slide-one{
+  flex: 0 0 100%;
+  min-width: 0;
+}
+@media (max-width: 1280px) {
+  .embla__slide {
+    flex: 0 0 24%;
+    min-width: 0;
+  }
+}
+@media (max-width: 1000px) {
+  .embla__slide {
+    flex: 0 0 50%;
+    min-width: 0;
+    margin: 0 20px;
+  }
 }
