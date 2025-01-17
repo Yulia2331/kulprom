@@ -34,8 +34,9 @@ export default function Home() {
     if (emblaApiVac) emblaApiVac.scrollNext()
   }, [emblaApiVac])
 
+const [isOpen, setOpen] = useState();
   return (
-    <div className="overflow-hidden text-white text-lg scroll-smooth">
+    <div className="overflow-hidden text-white text-lg scroll-smooth relative">
       <main className="w-screen bg-beige flex justify-center items-center justify-items-center py-24 lg:py-32 xl:py-36 relative" >
         <div className="container 2xl:px-[80px] z-20">
         <div className="w-full flex justify-center lg:justify-between bg-dark-400 md:py-8 xl:py-10 2xl:py-16 py-5 relative">
@@ -49,15 +50,15 @@ export default function Home() {
          </div>
         <div className="flex justify-center items-center flex-col 2xl:px-20 px-10 lg:py-0 py-8 z-20">
           <img className="w-full xl:max-w-none max-w-64 sm:max-w-96" src="/logo.svg" alt="" />
-          <h1 className="tracking-tighter max-w-80 text-3xl sm:text-5xl text-center text-beige pt-8 lg:hidden scale-y-125">ПРОМЫШЛЕННАЯ КУЛИНАРИЯ</h1>
+          <h1 className="tracking-tight max-w-80 text-3xl sm:text-5xl text-center text-beige pt-8 lg:hidden scale-y-125">ПРОМЫШЛЕННАЯ КУЛИНАРИЯ</h1>
           <span className="flex justify-center text-xl sm:text-2xl md:text-3xl xl:text-4xl mt-8 font-normal text-beige font-vox">создаем вкус будущего</span>
           <a href="" className="mt-10 lg:absolute lg:-bottom-[25%] xl:-bottom-[21%] lg:left-1/2 lg:-translate-x-5 xl:-translate-x-8 z-10">
             <img src="/banner-arr.svg" alt="" className="lg:h-[80px] lg:w-[80px] xl:h-[90px] xl:w-[90px]"/>
           </a>
           <img src="/cook.svg" alt="" className="absolute hidden lg:block lg:w-[360px] lg:-bottom-[88%] lg:left-1/3 xl:w-[460px] xl:-bottom-[85%] xl:left-1/3"/>
           </div>
-          <div className="w-8/12 ml-26 max-w-4xl pr-20 z-20 hidden lg:block">
-            <ol className="w-full tracking-tighter xl:text-6xl md:text-5xl text-4xl">
+          <div className="lg:w-8/12 ml-26 lg:max-w-4xl pr-20 z-20 hidden lg:block">
+            <ol className="w-full tracking-tight xl:text-6xl md:text-5xl text-4xl">
               <li className="translate-x-10"><a href="#com">КОМПАНИЯ</a></li>
               <li className="-rotate-90 -translate-y-16 2xl:text-7xl"><a href="">ПАРТНЕРЫ</a></li>
               <li className="text-right translate-x-24 -translate-y-20"><a href="">ВАКАНСИИ</a></li>
@@ -83,11 +84,11 @@ export default function Home() {
         border-r-[52px] lg:border-r-[75px] border-r-dark-400
         border-b-[52px] lg:border-b-[75px] border-b-transparent
          absolute -top-[100px] lg:-top-[148px] right-0">
-          <div className="translate-x-7 -translate-y-3 lg:hidden">
+          <button className="translate-x-7 -translate-y-3 lg:hidden" onClick={() => setOpen(!isOpen)}>
             <span className="block h-[3px] w-8 bg-black rounded-sm mb-2"></span>
             <span className="block h-[3px] w-8 bg-black rounded-sm mb-2"></span>
             <span className="block h-[3px] w-8 bg-black rounded-sm"></span>
-          </div>
+          </button>
           </div>
          <div className="absolute w-[102%] sm:w-[700px] md:w-[860px] lg:w-[1166px] xl:w-[1475px] 2xl:w-[1637px] h-[165px] lg:h-[185px] -right-[6%] sm:-right-[20%] z-0 -bottom-[18%] lg:-bottom-[25%] bg-dark-400 overflow-hidden"></div>
          <div className="h-0 w-0
@@ -130,9 +131,9 @@ export default function Home() {
                   width={70}
                   height={82}
                 />
-                <span className="text-4xl tracking-tighter text-beige ml-4 scale-y-125">КУЛПРОМ</span>
+                <span className="text-4xl tracking-tight text-beige ml-4 scale-y-125">КУЛПРОМ</span>
                 </a>
-                <ol className="lg:flex gap-x-8 ml-56 text-xl tracking-tighter hidden">
+                <ol className="lg:flex gap-x-8 ml-36 xl:ml-56 text-xl tracking-tight hidden">
                   <li className=""><a href="" >КОМПАНИЯ</a></li>
                   <li className=""><a href="" >ПАРТНЕРЫ</a></li>
                   <li className=""><a href="" >ПРОДУКТЫ</a></li>
@@ -147,11 +148,11 @@ export default function Home() {
         border-b-[52px] lg:border-b-[75px] border-b-transparent
         -translate-x-[51px]
         ">
-          <div className="translate-x-7 -translate-y-3 lg:hidden">
+          <button className="translate-x-7 -translate-y-3 lg:hidden" onClick={() => setOpen(!isOpen)}>
             <span className="block h-[3px] w-8 bg-black rounded-sm mb-2"></span>
             <span className="block h-[3px] w-8 bg-black rounded-sm mb-2"></span>
             <span className="block h-[3px] w-8 bg-black rounded-sm"></span>
-          </div>
+          </button>
           </div>
           </div>
               </div>
@@ -161,26 +162,26 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row items-center justify-between pb-0 pt-12 lg:py-20 lg:pt-32 relative">
             <div className="container basis-6/12 relative z-30  lg:mb-0 -mb-28 flex flex-col items-center lg:items-start">
             <div className="flex items-start lg:block">
-              <h2 className="text-white text-4xl lg:text-6xl tracking-tighter uppercase whitespace-nowrap [writing-mode:vertical-lr] lg:[writing-mode:horizontal-tb] -scale-100 lg:scale-100 mr-8">О компании</h2>
+              <h2 className="text-white text-4xl lg:text-6xl tracking-tight uppercase whitespace-nowrap [writing-mode:vertical-lr] lg:[writing-mode:horizontal-tb] -scale-100 lg:scale-100 mr-8">О компании</h2>
               <p className="text-beige lg:my-14 max-w-xl font-vox font-bold z-40">Figma ipsum component variant main layer. Stroke bullet comment ipsum boolean reesizing vector rotate strikethrough horizontal. Ipsum flatten figjam outline polygon main edit library blur subtract. Vector outline asset vector follower bold. Asset follower layout star scale follower shadow inspect link distribute. Stroke strikethrough content move frame. Asset hand union library layout. Export background variant.</p>
               </div>
-              <a href="" className="bg-dark-800 font-vox font-bold rounded-md py-4 w-96 inline-flex items-center justify-center relative after:absolute after:-right-6 after:h-10 after:w-9 after:bg-beige lg:after:bg-dark-400 after:rounded-sm before:absolute before:-left-6 before:h-10 before:w-9 before:bg-orange lg:before:bg-beige before:rounded-sm hover:after:translate-x-5 hover:before:-translate-x-5 transition-all delay-500 z-50 translate-y-40 lg:translate-y-0">Контакты</a>    
+              <a href="" className="bg-dark-800 font-vox font-bold rounded-md py-4 w-72 md:w-96 inline-flex items-center justify-center relative after:absolute after:-right-6 after:h-10 after:w-9 after:bg-beige lg:after:bg-dark-400 after:rounded-sm before:absolute before:-left-6 before:h-10 before:w-9 before:bg-orange lg:before:bg-beige before:rounded-sm hover:after:translate-x-5 hover:before:-translate-x-5 transition-all delay-500 z-50 translate-y-40 lg:translate-y-0">Контакты</a>    
             </div>
             <div className="after:border-l-[520px] after:border-l-transparent
-      after:border-t-[200px]  after:border-t-orange 
-     after:border-r-[520px]  after:border-r-transparent after:-bottom-[190px] z-20 after:absolute relative lg:border-0 flex justify-center items-center lg:hidden"></div>
-            <div className="bg-dark-400 pt-[600px] lg:bg-transparent w-full flex flex-col lg:basis-6/12 h-96 py-64 lg:py-0 text-4xl tracking-tighter uppercase z-10 pb-96">
+                after:border-t-[200px]  after:border-t-orange 
+              after:border-r-[520px]  after:border-r-transparent after:-bottom-[190px] z-20 after:absolute relative lg:border-0 flex justify-center items-center lg:hidden"></div>
+            <div className="bg-dark-400 pt-[600px] lg:bg-transparent w-full flex flex-col lg:basis-6/12 h-96 py-64 lg:py-0 text-4xl tracking-tight uppercase z-10 pb-96">
             <div className="flex flex-col items-center justify-center container lg:static relative">
-              <span className="z-30 rotate-[40deg] -translate-y-32 -translate-x-28 sm:-translate-y-72 sm:-translate-x-56 lg:-translate-y-20 lg:-translate-x-32">Роллом</span>
+              <span className="z-30 rotate-[40deg] -translate-y-40 -translate-x-24 sm:-translate-y-72 sm:-translate-x-56 lg:-translate-y-20 lg:-translate-x-32">Роллом</span>
               <span className="z-30 rotate-[40deg] absolute left-72 lg:right-28 bottom-0 lg:bottom-80 xl:bottom-60 lg:left-auto">Бей</span>
               <span className="z-30 rotate-[10deg] absolute left-5 -bottom-8 sm:bottom-36 sm:-translate-x-12 lg:left-auto">Вкусным</span>
               <span className="z-30 absolute -bottom-36 lg:-bottom-2 left-2/3 lg:left-auto lg:right-0">Голод</span>
-              <span className="h-[263px] w-[263px] sm:h-[363px] sm:w-[363px] lg:h-[442px] lg:w-[442px] rounded-full bg-orange z-20 absolute lg:-bottom-0 lg:-right-14"></span>
-              <div className="w-0 h-0 -rotate-[80deg] absolute left-[20%] -bottom-20  sm:left-40 sm:bottom-0  lg:left-2/3 lg:bottom-48 scale-100 sm:scale-150 lg:scale-[1.7] xl:scale-[2] z-20
+              <span className="h-[263px] w-[263px] sm:h-[363px] sm:w-[363px] lg:h-[442px] lg:w-[442px] rounded-full bg-orange z-20 absolute lg:-bottom-0 -right-1 lg:-right-14"></span>
+              <div className="w-0 h-0 -rotate-[80deg] absolute left-[20%] -bottom-20 -translate-y-4 sm:left-40 sm:bottom-0  lg:left-2/3 lg:bottom-48 scale-100 sm:scale-150 lg:scale-[1.7] xl:scale-[2] z-20
             border-t-[50px] border-t-transparent
             border-l-[129px] border-l-dark-800
             border-b-[240px] border-b-transparent"></div>
-              <span className="absolute -top-36 sm:-top-48 lg:right-40 lg:top-32 h-12 w-24 md:h-20 md:w-44 bg-beige -rotate-[35deg] z-10"></span>
+              <span className="absolute -top-36 translate-x-5 sm:-top-48 lg:right-40 lg:top-32 h-12 w-24 md:h-20 md:w-44 bg-beige -rotate-[35deg] z-10"></span>
               <span className="bg-orange h-16 w-7 md:h-28 md:w-11 absolute -bottom-28 left-24 lg:bottom-0 lg:right-96 z-10 lg:left-auto"></span>
               <div className="absolute -left-28 -bottom-36 sm:left-2/4 translate-x-32 sm:bottom-32 z-20 flex flex-col items-end lg:right-auto">
               <span className="h-2 w-12 bg-beige"></span>
@@ -198,7 +199,7 @@ export default function Home() {
           </div>
         </div>
         </section>
-        <section className="bg-dark-800 lg:py-20 relative z-50 lg:z-30 pb-0 lg:pb-48 
+        <section className="bg-dark-800 lg:py-20 relative z-50 lg:z-30 pb-0 lg:pb-28 
          lg:before:border-t-[160px] before:border-t-transparent
         lg:before:border-l-[2375px] before:border-l-dark-800
         lg:before:absolute before:-top-40
@@ -207,8 +208,8 @@ export default function Home() {
      after:border-r-[520px]  after:border-r-transparent after:-top-[390px] after:absolute lg:after:border-none
      flex items-center justify-center
         ">
-          <div className="2xl:px-[80px] -translate-y-72 lg:translate-y-0 relative z-10 overflow-hidden pb-[300px] lg:pb-0">
-            <h2 className="text-white text-4xl lg:text-6xl tracking-tighter uppercase lg:mb-24 mb-9 text-center lg:text-left">Продукты</h2>
+          <div className="lg:container 2xl:px-[80px] -translate-y-72 lg:translate-y-0 relative z-10 overflow-hidden lg:overflow-visible pb-[300px] lg:pb-0">
+            <h2 className="text-white text-4xl lg:text-6xl tracking-tight uppercase lg:mb-24 mb-9 text-center lg:text-left">Продукты</h2>
             <div className="embla lg:container" ref={emblaProducts}>
                 <div className="embla__container h-full w-full lg:gap-5">
                   <div className="embla__slide w-56 max-w-56 lg:w-64  lg:max-w-64">
@@ -282,13 +283,13 @@ export default function Home() {
                   height={370}
                 />
                 <p className="text-white lg:text-beige mt-6 max-w-xl font-vox font-bold">Figma ipsum component variant main layer. Stroke bullet comment ipsum boolean reesizing vector rotate strikethrough horizontal. Ipsum flatten figjam outline polygon main edit library blur subtract. Vector outline asset vector follower bold. Asset follower layout star scale follower shadow inspect link distribute. Stroke strikethrough content move frame. Asset hand union library layout. Export background variant.</p>
-                <div className="lg:flex justify-center hidden">
+                <div className="lg:flex hidden">
                   <a href="" className="bg-dark-400 font-vox font-bold rounded-md mt-24 py-4 md:w-96 inline-flex items-center justify-center relative after:absolute after:-right-6 after:h-10 after:w-9 after:bg-dark-800 lg:after:bg-orange after:rounded-sm before:absolute before:-left-6 before:h-10 before:w-9 before:bg-orange  lg:before:bg-beige before:rounded-sm hover:after:translate-x-5 hover:before:-translate-x-5 transition-all delay-500 w-64 ">Оставить заявку</a>
                 </div>
                 </div>
                 <div className="basis-6/12 -mb-44">
                 <div className="embla" ref={emblaRef}>
-                      <div className="embla__container h-full w-full max-h-[280px] sm:max-h-[380px] lg:max-h-[470px]">
+                      <div className="embla__container h-full w-full max-h-[280px] sm:max-h-[380px] lg:max-h-[440px]">
                       <div className="embla__slide-one ">
                           <img src="/img-5.jpg" alt="" className='w-full h-full object-cover max-h-full'/>
                         </div>
@@ -335,10 +336,10 @@ export default function Home() {
             border-b-[240px] border-b-transparent block lg:hidden"></div>
               <img src="/broccoli.svg" alt="" className="w-full h-full basis-1/3"/>
             </div>
-            <h2 className="text-dark-800 text-6xl tracking-tighter uppercase hidden lg:block">ПРЕИМУЩЕСТВА</h2>
+            <h2 className="text-dark-800 text-6xl tracking-tight uppercase hidden lg:block">ПРЕИМУЩЕСТВА</h2>
             <div className="flex justify-between items-center flex-col-reverse lg:flex-row relative z-40">
               <div className="basis-5/12 mt-24">
-              <div className="lg:hidden block text-center text-5xl uppercase  tracking-tighter mb-8">
+              <div className="lg:hidden block text-center text-5xl uppercase  tracking-tight mb-8">
                 <span className="text-dark-800 block">ПРЕИМУЩЕСТВО</span>
                 <span className="text-dark-800">работы с нами</span>
               </div>
@@ -362,7 +363,7 @@ export default function Home() {
               </div>
               </div>
               <div className="basis-5/12">
-              <div className="text-center text-5xl uppercase  tracking-tighter mb-8">
+              <div className="text-center text-5xl uppercase  tracking-tight mb-8">
                 <span className="text-orange block">Как нужно</span>
                 <span className="text-dark-800">РАЗРЕЗЫВАТЬ СЭНДВИЧ</span>
               </div>
@@ -383,7 +384,7 @@ export default function Home() {
                 />
               </div>
           <div className="flex flex-col items-center max-w-md w-full md-w-[477px]">
-            <h2 className="text-white text-4xl tracking-tighter uppercase text-center w-96 mb-9">ОСТАВЬТЕ ЗАЯВКУ
+            <h2 className="text-white text-4xl tracking-tight uppercase text-center w-96 mb-9">ОСТАВЬТЕ ЗАЯВКУ
             НА СОТРУДНИЧЕСТВО</h2>
             <div className="flex font-vox font-bold w-full mb-8">
               <button className="border border-dark-400 text-dark-400 basis-1/2 py-4 rounded-md">Клиенты</button>
@@ -418,7 +419,7 @@ export default function Home() {
       border-t-[325px]  border-t-orange 
      border-r-[500px]  border-r-transparent top-0 absolute md:border-0"></div>
           <div className="container z-10">
-            <h2 className="text-white text-6xl tracking-tighter uppercase mb-20 hidden md:flex">С КЕМ МЫ РАБОТАЕМ</h2>
+            <h2 className="text-white text-6xl tracking-tight uppercase mb-20 hidden md:flex">С КЕМ МЫ РАБОТАЕМ</h2>
             <h2 className="uppercase text-center font-vox font-bold md:hidden mb-11 mt-24">Наши партнеры</h2>
             <div className="flex items-center justify-between flex-col md:flex-row gap-14 xl:gap-48">
               <div className="basis-1/3 flex justify-center"><img src="/vkusvill_textlogo.svg" alt="" className="w-3/4 md:w-full" /></div>
@@ -437,7 +438,7 @@ export default function Home() {
             border-l-[129px] border-l-dark-800
             border-b-[240px] border-b-transparent"></div>
           <div className="md:container">
-            <h2 className="text-white text-4xl sm:text-6xl text-center md:text-left tracking-tighter uppercase mb-10 md:mb-20">ВАКАНСИИ</h2>
+            <h2 className="text-white text-4xl sm:text-6xl text-center md:text-left tracking-tight uppercase mb-10 md:mb-20">ВАКАНСИИ</h2>
               <div className="embla" ref={emblaVacancies}>
                 <div className="embla__container h-full w-full lg:gap-5">
                   <div className="embla__slide font-vox text-dark-800 w-56 max-w-56 lg:w-64  lg:max-w-64"><img src="/v-1.jpg" alt="" />
@@ -497,13 +498,13 @@ export default function Home() {
         after:absolute after:-top-[15%] md:after:-top-28">
           <div className="container">
             <div className="flex flex-col items-center relative lg:hidden z-10 -mt-52">
-            <h2 className="text-white text-4xl tracking-tighter uppercase mb-14 lg:mb-5">Контакты</h2>
+            <h2 className="text-white text-4xl tracking-tight uppercase mb-14 lg:mb-5">Контакты</h2>
             <a href="" className="text-3xl block">+7 (999) 999-99-99</a>
             <a href="" className="text-3xl">info@kulprom.ru</a>
             </div>
             <div className="flex bg-beige py-12 px-11 rounded-2xl relative z-20 mt-16 min-h-72 lg:min-h-96">
               <div className="bg-dark-400 py-6 px-20 lg:flex flex-col items-center rounded-2xl hidden">
-                <h2 className="text-white text-5xl tracking-tighter uppercase mb-5">Контакты</h2>
+                <h2 className="text-white text-5xl tracking-tight uppercase mb-5">Контакты</h2>
                 <a href="" className="text-3xl">+7 (999) 999-99-99</a>
                 <a href="" className="text-3xl">info@kulprom.ru</a>
                   <div className="flex items-center gap-12 mt-10 mb-9">
@@ -530,9 +531,9 @@ export default function Home() {
                   width={70}
                   height={82}
                 />
-                <span className="text-4xl tracking-tighter text-beige ml-4 scale-y-125">КУЛПРОМ</span>
+                <span className="text-4xl tracking-tight text-beige ml-4 scale-y-125">КУЛПРОМ</span>
                 </a>
-                  <ol className="grid grid-cols-2 sm:grid-cols-3 gap-x-14 gap-y-5 ml-0 xl:ml-56 text-2xl tracking-tighter basis-8/12 pt-4">
+                  <ol className="grid grid-cols-2 sm:grid-cols-3 gap-x-14 gap-y-5 ml-0 xl:ml-56 text-2xl tracking-tight basis-8/12 pt-4">
                     <li className=""><a href="" >КОМПАНИЯ</a></li>
                     <li className=""><a href="" >ПАРТНЕРЫ</a></li>
                     <li className=""><a href="" >ПРОДУКТЫ</a></li>
@@ -548,6 +549,62 @@ export default function Home() {
             </div>
           </div>
         </footer>
+        <div className={`z-[300] fixed top-0 left-0 bg-orange min-h-screen w-full ${isOpen ? '' : 'hidden'}`}>
+          <div className="min-h-screen h-screen overflow-y-scroll overflow-x-hidden"> 
+            <div className="relative ">
+            <div className="overflow-hidden max-h-[1000px] min-h-[750px] absolute top-0 left-5 flex justify-between w-full">
+              <div className="translate-y-[70%] left-5 flex flex-col items-center z-40">
+                <div className="border-2 border-white flex justify-center">
+                  <div className=" h-full w-3 bg-beige
+                    border-l-[2px] border-l-white
+                    border-t-[480px] border-t-transparent
+                    border-r-[2px] border-r-white
+                    "></div>
+                </div>
+              </div>
+              <div className="translate-y-[5%] -right-28 flex flex-col items-center z-40">
+                <div className="border-2 border-beige flex justify-center rotate-90">
+                  <div className=" h-full w-3 bg-dark-800
+                    border-l-[2px] border-l-beige
+                    border-t-[480px] border-t-transparent
+                    border-r-[2px] border-r-beige
+                    "></div>
+                </div>
+              </div>
+              </div>
+            <img className="w-full max-w-36 absolute bottom-[8%] sm:bottom-[18%] left-1/3" src="/logo.svg" alt="" />
+            <div className="bg-dark-400 relative before:border-t-[40px] before:border-t-transparent before:border-r-beige before:absolute before:right-[2px] before:bottom-0 before:border-r-[30px]
+            after:border-r-[29px] after:absolute after:right-[3px] after:top-0 before:z-20 after:border-b-[40px] after:border-b-transparent after:border-r-beige">
+              <div className="border-r-[30px] absolute right-0 top-0 z-20 border-b-[40px] border-b-transparent border-r-orange"></div>
+              <div className="z-20 absolute bottom-0 right-0 border-l-[29px] border-t-[40px] border-t-orange border-l-transparent border-b-[40px] border-b-orange "></div>
+              <div className="border-2 border-beige px-5 sm:px-20 md:px-40 py-2 flex justify-between ">
+              <a href="" className="flex items-center">
+              <Image
+                  aria-hidden
+                  src="/logo.svg"
+                  alt="File icon"
+                  width={54}
+                  height={63}
+                />
+                <span className="text-3xl tracking-tight text-beige ml-4 scale-y-125">КУЛПРОМ</span>
+                </a>
+                <button className="flex items-center z-[100] relative" onClick={() => setOpen(!isOpen)}>
+                  <span className="h-6 w-[2px] block bg-dark-800 rotate-45 -mt-[2px] rounded-sm"></span>
+                  <span className="h-6 w-[2px] block bg-dark-800 -rotate-45 -ml-[2px] -mt-[2px] rounded-sm"></span>
+                </button>
+                </div>
+            </div>
+            <ol className="w-full tracking-tight flex justify-center flex-col px-5 sm:px-20 md:px-40 py-2 sm:py-20 ">
+              <li className="text-6xl"><a href="#com">КОМПАНИЯ</a></li>
+              <li className="[writing-mode:vertical-rl] -scale-100 ml-9 text-5xl mt-10"><a href="">ПАРТНЕРЫ</a></li>
+              <li className="text-right -translate-y-44 text-[30px]"><a href="">ВАКАНСИИ</a></li>
+              <li className="text-right sm:-translate-x-40 -translate-x-5 -translate-y-28 text-[40px]"><a href="">ПРОДУКТЫ</a></li>
+              <li className=" text-[40px]"><a href="" className="">GREENSHAKE</a></li>
+              <li className="[writing-mode:vertical-lr] -translate-y-20 -scale-100 text-6xl"><a href="">КОНТАКТЫ</a></li>
+            </ol>  
+            </div>
+            </div>
+          </div>
     </div>
    
   );
