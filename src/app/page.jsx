@@ -141,18 +141,22 @@ const [isOpen, setOpen] = useState();
                   <li className=""><a href="" >GREENSHAKE</a></li>
                   <li className=""><a href="" >КОНТАКТЫ</a></li>
                 </ol>
-                <div className="w-[4%] sm:w-[10%] bg-dark-400  absolute top-0  right-0 lg:hidden">
-                <div className="h-0 w-0
-        border-t-[52px] lg:border-t-[75px] border-t-transparent
-        border-r-[52px] lg:border-r-[75px] border-r-dark-400
-        border-b-[52px] lg:border-b-[75px] border-b-transparent
-        -translate-x-[51px]
-        ">
+                <div className="w-[4%] sm:w-[10%] bg-dark-400 z-20  absolute top-0  right-0 lg:hidden">
+                  <div className="relative border-b-2 border-beige">
+                  <div className="absolute -top-2 -left-12 border-t-[65px] border-t-transparent border-r-[44px] border-r-beige rotate-12 "></div>
+                  <div className="absolute top-[48px] -left-[48px] border-b-[63px] border-b-transparent border-r-[44px] border-r-beige   -rotate-[10deg]"></div>
+                    <div className="h-0 w-0
+            border-t-[52px] lg:border-t-[75px] border-t-transparent
+            border-r-[52px] lg:border-r-[75px] border-r-dark-400
+            border-b-[52px] lg:border-b-[75px] border-b-transparent
+            -translate-x-[51px] 
+            ">
           <button className="translate-x-7 -translate-y-3 lg:hidden" onClick={() => setOpen(!isOpen)}>
             <span className="block h-[3px] w-8 bg-black rounded-sm mb-2"></span>
             <span className="block h-[3px] w-8 bg-black rounded-sm mb-2"></span>
             <span className="block h-[3px] w-8 bg-black rounded-sm"></span>
           </button>
+          </div>
           </div>
           </div>
               </div>
@@ -170,20 +174,20 @@ const [isOpen, setOpen] = useState();
             <div className="after:border-l-[520px] after:border-l-transparent
                 after:border-t-[200px]  after:border-t-orange 
               after:border-r-[520px]  after:border-r-transparent after:-bottom-[190px] z-20 after:absolute relative lg:border-0 flex justify-center items-center lg:hidden"></div>
-            <div className="bg-dark-400 pt-[600px] lg:bg-transparent w-full flex flex-col lg:basis-6/12 h-96 py-64 lg:py-0 text-4xl tracking-tight uppercase z-10 pb-96">
-            <div className="flex flex-col items-center justify-center container lg:static relative">
-              <span className="z-30 rotate-[40deg] -translate-y-40 -translate-x-24 sm:-translate-y-72 sm:-translate-x-56 lg:-translate-y-20 lg:-translate-x-32">Роллом</span>
-              <span className="z-30 rotate-[40deg] absolute left-72 lg:right-28 bottom-0 lg:bottom-80 xl:bottom-60 lg:left-auto">Бей</span>
-              <span className="z-30 rotate-[10deg] absolute left-5 -bottom-8 sm:bottom-36 sm:-translate-x-12 lg:left-auto">Вкусным</span>
-              <span className="z-30 absolute -bottom-36 lg:-bottom-2 left-2/3 lg:left-auto lg:right-0">Голод</span>
+            <div className="bg-dark-400 pt-[600px] lg:bg-transparent w-full flex flex-col lg:basis-6/12 h-96 py-64 lg:py-0 text-4xl tracking-tight uppercase z-10 pb-[500px]">
+            <div className="flex flex-col items-center justify-center container max-w-96 sm:max-w-[550px] lg:static relative">
+              <span className="z-30 rotate-[40deg] -translate-y-40 -translate-x-24 sm:-translate-y-56 sm:-translate-x-28 lg:-translate-y-20 lg:-translate-x-32">Роллом</span>
+              <span className="z-30 rotate-[40deg] absolute left-72 sm:left-96 lg:right-28 bottom-0 lg:bottom-80 xl:bottom-60 lg:left-auto">Бей</span>
+              <span className="z-30 rotate-[10deg] absolute left-5 sm:left-28 -bottom-8 lg:bottom-48 xl:bottom-40 lg:-translate-x-16 lg:left-auto">Вкусным</span>
+              <span className="z-30 absolute -bottom-36 sm:-bottom-48 lg:-bottom-2 left-2/3 lg:left-auto lg:right-0">Голод</span>
               <span className="h-[263px] w-[263px] sm:h-[363px] sm:w-[363px] lg:h-[442px] lg:w-[442px] rounded-full bg-orange z-20 absolute lg:-bottom-0 -right-1 lg:-right-14"></span>
-              <div className="w-0 h-0 -rotate-[80deg] absolute left-[20%] -bottom-20 -translate-y-4 sm:left-40 sm:bottom-0  lg:left-2/3 lg:bottom-48 scale-100 sm:scale-150 lg:scale-[1.7] xl:scale-[2] z-20
+              <div className="w-0 h-0 -rotate-[80deg] absolute left-[20%] -bottom-20 -translate-y-4 sm:left-40 sm:-bottom-14  lg:left-2/3 lg:bottom-48 scale-100 sm:scale-150 lg:scale-[1.7] xl:scale-[2] z-20
             border-t-[50px] border-t-transparent
             border-l-[129px] border-l-dark-800
             border-b-[240px] border-b-transparent"></div>
-              <span className="absolute -top-36 translate-x-5 sm:-top-48 lg:right-40 lg:top-32 h-12 w-24 md:h-20 md:w-44 bg-beige -rotate-[35deg] z-10"></span>
-              <span className="bg-orange h-16 w-7 md:h-28 md:w-11 absolute -bottom-28 left-24 lg:bottom-0 lg:right-96 z-10 lg:left-auto"></span>
-              <div className="absolute -left-28 -bottom-36 sm:left-2/4 translate-x-32 sm:bottom-32 z-20 flex flex-col items-end lg:right-auto">
+              <span className="absolute -top-36 translate-x-5 sm:-top-48 lg:right-40 lg:top-44 xl:top-32 h-12 w-24 md:h-16 md:w-32 xl:h-20 xl:w-44 bg-beige -rotate-[35deg] z-10"></span>
+              <span className="bg-orange h-16 w-7 lg:h-28 lg:w-11 absolute -bottom-28 left-24 lg:bottom-0 lg:right-96 z-10 lg:left-auto"></span>
+              <div className="absolute -left-24 -bottom-36 lg:left-2/4 translate-x-28 lg:bottom-32 z-20 flex flex-col items-end lg:right-auto">
               <span className="h-2 w-12 bg-beige"></span>
               <span className="h-4 w-5 bg-dark-800 mt-3"></span>
             </div>
@@ -413,7 +417,7 @@ const [isOpen, setOpen] = useState();
         md:after:border-l-[1100px] after:border-l-transparent
       md:after:border-t-[125px] after:border-t-orange
       md:after:border-r-[1100px] md:after:border-r-transparent
-        after:absolute md:after:-bottom-[32%]
+        after:absolute md:after:-bottom-[30%]
         ">
           <div className="border-l-[500px] border-l-transparent
       border-t-[325px]  border-t-orange 
@@ -428,17 +432,17 @@ const [isOpen, setOpen] = useState();
             </div>
           </div>
           <div className="w-0 h-0 -rotate-[80deg] absolute left-2/3 translate-x-56 -bottom-[60%] scale-90 z-20
-            border-t-[50px] border-t-transparent
-            border-l-[129px] border-l-dark-800
-            border-b-[240px] border-b-transparent hidden md:block"></div>
+            md:border-t-[50px] border-t-transparent
+            md:border-l-[129px] border-l-dark-800
+            md:border-b-[240px] border-b-transparent border-0"></div>
         </section>
-        <section className="bg-dark-400 pt-32 pb-56 z-40 relative">
+        <section className="bg-dark-400 pt-32 pb-56 relative">
             <div className="w-0 h-0 rotate-[40deg] absolute right-14 -translate-y-2 bottom-5 z-20 hidden md:block
             border-t-[50px] border-t-transparent
             border-l-[129px] border-l-dark-800
             border-b-[240px] border-b-transparent"></div>
           <div className="md:container">
-            <h2 className="text-white text-4xl sm:text-6xl text-center md:text-left tracking-tight uppercase mb-10 md:mb-20">ВАКАНСИИ</h2>
+            <h2 className="text-white text-4xl sm:text-6xl text-center md:text-left tracking-tight uppercase mb-10 md:mb-20 ">ВАКАНСИИ</h2>
               <div className="embla" ref={emblaVacancies}>
                 <div className="embla__container h-full w-full lg:gap-5">
                   <div className="embla__slide font-vox text-dark-800 w-56 max-w-56 lg:w-64  lg:max-w-64"><img src="/v-1.jpg" alt="" />
