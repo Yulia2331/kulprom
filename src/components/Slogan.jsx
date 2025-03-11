@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import "aos/dist/aos.css"
+import { Link, Element } from 'react-scroll'
 export default function Slogan () {
      const [tr, setTr] = useState('-translate-x-72 -translate-y-56');
      const [kv, setKv] = useState('translate-x-72 -translate-y-52');
@@ -32,7 +32,7 @@ export default function Slogan () {
         }
       });
     return (
-      <section className="bg-orange relative z-30 pb-48 border-t-2 border-beige lg:border-0"> 
+      <section className="bg-orange relative z-30 pb-48"> 
         <div id="block" className="lg:container 2xl:px-[80px]">
          <div className="flex flex-col lg:flex-row items-center justify-between pb-0 pt-12 lg:py-20 lg:pt-32 relative">
                    <div className="container basis-6/12 relative z-30  lg:mb-0 -mb-28 flex flex-col items-center lg:items-start">
@@ -40,7 +40,7 @@ export default function Slogan () {
                      <h2 className="text-white text-4xl lg:text-6xl tracking-tight uppercase whitespace-nowrap [writing-mode:vertical-lr] lg:[writing-mode:horizontal-tb] -scale-100 lg:scale-100 mr-8">О компании</h2>
                      <p className="text-beige lg:my-14 max-w-xl font-vox font-bold z-40">Figma ipsum component variant main layer. Stroke bullet comment ipsum boolean reesizing vector rotate strikethrough horizontal. Ipsum flatten figjam outline polygon main edit library blur subtract. Vector outline asset vector follower bold. Asset follower layout star scale follower shadow inspect link distribute. Stroke strikethrough content move frame. Asset hand union library layout. Export background variant.</p>
                      </div>
-                     <a href="" className="bg-dark-800 font-vox font-bold rounded-md py-4 w-72 md:w-96 inline-flex items-center justify-center relative after:absolute after:-right-6 after:h-10 after:w-9 after:bg-beige lg:after:bg-dark-400 after:rounded-sm before:absolute before:-left-6 before:h-10 before:w-9 before:bg-orange lg:before:bg-beige before:rounded-sm hover:after:translate-x-5 hover:before:-translate-x-5 transition-all delay-500 z-50 translate-y-40 lg:translate-y-0">Контакты</a>    
+                     <Link to="contacts" smooth={true} duration={500} href="" className="bg-dark-800 font-vox font-bold rounded-md py-4 w-72 md:w-96 inline-flex items-center justify-center relative after:absolute after:-right-6 after:h-10 after:w-9 after:bg-beige lg:after:bg-dark-400 after:rounded-sm before:absolute before:-left-6 before:h-10 before:w-9 before:bg-orange lg:before:bg-beige before:rounded-sm hover:after:translate-x-5 hover:before:-translate-x-5 transition-all delay-500 z-50 translate-y-40 lg:translate-y-0">Контакты</Link>    
                    </div>
 <div className="after:border-l-[520px] after:border-l-transparent
 after:border-t-[200px]  after:border-t-orange 

@@ -1,9 +1,6 @@
 
 'use client'
 import React, { useCallback, useEffect, useState } from 'react'
-// import useEmblaCarousel from 'embla-carousel-react'
-// import { DotButton, useDotButton } from './EmblaCarouselDotButton'
-// import Header from '../components/Header'
 import BannerMenu from '../components/BannerMenu'
 import BannerLogo from '../components/BannerLogo'
 import Slogan from '../components/Slogan'
@@ -14,23 +11,10 @@ import Partners from '../components/Partners'
 import Vacancies from '../components/Vacancies'
 import Footer from '../components/Footer'
 import Image from "next/image";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import { Link, Element } from 'react-scroll';
-import EmblaCarousel from '../components/EmblaCarousel'
+
 
 export default function Home() {
-//   const OPTIONS = {}
-// const SLIDE_COUNT = 5
-// const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
-    useEffect(() => {
-          AOS.init({
-            once: true,
-            disable: "phone",
-            duration: 700,
-            easing: "ease-out-cubic",
-          });
-        }, []);
   
 const [isOpen, setOpen] = useState();
   return (
@@ -100,27 +84,21 @@ const [isOpen, setOpen] = useState();
           </div>  
         </div>
       </main>
-      <header className="bg-orange py-5 relative z-20">
+      <header className="bg-orange py-5 border-t-2 border-t-beige lg:border-0 relative z-20">
                 <div className="container 2xl:px-[80px]">
                   <div className="flex items-center">
                     <a href="" className="flex items-center">
-                    <Image
-                        aria-hidden
-                        src="/logo.svg"
-                        alt="File icon"
-                        width={70}
-                        height={82}
-                      />
+                      <img src="/logo.svg" alt="" className="h-[82px]" />
                       <span className="text-4xl tracking-tight text-beige ml-4 scale-y-125">КУЛПРОМ</span>
                       </a>
                       <ol className="lg:flex gap-x-8 ml-36 xl:ml-56 text-xl tracking-tight hidden">
                         <li className="hover:animate-pulse">
-                          <Link to="company" smooth={true} duration={500} className="cursor-pointer">КОМПАНИЯ</Link></li>
-                        <li className="hover:animate-pulse"><Link to="partners" smooth={true} duration={500} className="cursor-pointer">ПАРТНЕРЫ</Link></li>
-                        <li className="hover:animate-pulse"><Link to="products" smooth={true} duration={500} className="cursor-pointer">ПРОДУКТЫ</Link></li>
-                        <li className="hover:animate-pulse"><Link to="vacancies" smooth={true} duration={500} className="cursor-pointer">ВАКАНСИИ</Link></li>
-                        <li className="hover:animate-pulse"><Link to="greenshake" smooth={true} duration={500} className="cursor-pointer">GREENSHAKE</Link></li>
-                        <li className="hover:animate-pulse"><Link to="contacts" smooth={true} duration={500} className="cursor-pointer">КОНТАКТЫE</Link></li>
+                          <Link to="company" smooth={true} duration={500} className="cursor-pointer pointer-events-auto">КОМПАНИЯ</Link></li>
+                        <li className="hover:animate-pulse"><Link to="partners" smooth={true} duration={500} className="cursor-pointer pointer-events-auto">ПАРТНЕРЫ</Link></li>
+                        <li className="hover:animate-pulse"><Link to="products" smooth={true} duration={500} className="cursor-pointer pointer-events-auto">ПРОДУКТЫ</Link></li>
+                        <li className="hover:animate-pulse"><Link to="vacancies" smooth={true} duration={500} className="cursor-pointer pointer-events-auto">ВАКАНСИИ</Link></li>
+                        <li className="hover:animate-pulse"><Link to="greenshake" smooth={true} duration={500} className="cursor-pointer pointer-events-auto">GREENSHAKE</Link></li>
+                        <li className="hover:animate-pulse"><Link to="contacts" smooth={true} duration={500} className="cursor-pointer pointer-events-auto">КОНТАКТЫ</Link></li>
                       </ol>
                       <div className="w-[4%] sm:w-[10%] bg-dark-400 z-20  absolute top-0  right-0 lg:hidden">
                         <div className="relative border-b-2 border-beige">
@@ -150,7 +128,9 @@ const [isOpen, setOpen] = useState();
           <ProductsBlock/>
         </Element>
           <AdvantagesBlock/>
-        <FormBlock/>
+          <Element name="form">
+            <FormBlock/>
+          </Element>
         <Element name="partners">
           <Partners/>
         </Element>
@@ -190,13 +170,7 @@ const [isOpen, setOpen] = useState();
                     <div className="z-20 absolute bottom-0 right-0 border-l-[29px] border-t-[40px] border-t-orange border-l-transparent border-b-[40px] border-b-orange "></div>
                     <div className="border-2 border-beige px-5 sm:px-20 md:px-40 py-2 flex justify-between ">
                     <a href="" className="flex items-center">
-                    <Image
-                        aria-hidden
-                        src="/logo.svg"
-                        alt="File icon"
-                        width={54}
-                        height={63}
-                      />
+                    <img className="h-[63px]" src="/logo.svg" alt="" />
                       <span className="text-3xl tracking-tight text-beige ml-4 scale-y-125">КУЛПРОМ</span>
                       </a>
                       <button className="flex items-center z-[100] relative" onClick={() => setOpen(!isOpen)}>
@@ -206,64 +180,15 @@ const [isOpen, setOpen] = useState();
                       </div>
                   </div>
                   <ol className="w-full tracking-tight flex justify-center flex-col px-5 sm:px-20 md:px-40 py-2 sm:py-20 ">
-                    <li className="text-6xl"><Link to="company" smooth={true} duration={500} className="cursor-pointer">КОМПАНИЯ</Link></li>
-                    <li className="[writing-mode:vertical-rl] -scale-100 ml-9 text-5xl mt-10"><Link to="partners" smooth={true} duration={500} onClick={() => setOpen(!isOpen)} className="cursor-pointer">ПАРТНЕРЫ</Link></li>
-                    <li className="text-right -translate-y-44 text-[30px]"><Link to="vacancies" smooth={true} duration={500} onClick={() => setOpen(!isOpen)} className="cursor-pointer">ВАКАНСИИ</Link></li>
-                    <li className="text-right sm:-translate-x-40 -translate-x-5 -translate-y-28 text-[40px]"><Link to="products" smooth={true} duration={500} onClick={() => setOpen(!isOpen)} className="cursor-pointer">ПРОДУКТЫ</Link></li>
-                    <li className=" text-[40px]"> <Link to="greenshake" smooth={true} duration={500} onClick={() => setOpen(!isOpen)}className="cursor-pointer">GREENSHAKE</Link></li>
-                    <li className="[writing-mode:vertical-lr] -translate-y-20 -scale-100 text-6xl"><Link to="contacts" smooth={true} duration={500} onClick={() => setOpen(!isOpen)} className="cursor-pointer">КОНТАКТЫE</Link></li>
+                    <li className="text-6xl pointer-events-none"><Link to="company" smooth={true} duration={500} className="cursor-pointer pointer-events-auto">КОМПАНИЯ</Link></li>
+                    <li className="[writing-mode:vertical-rl] -scale-100 ml-9 text-5xl mt-10 pointer-events-none"><Link to="partners" smooth={true} duration={500} onClick={() => setOpen(!isOpen)} className="cursor-pointer pointer-events-auto">ПАРТНЕРЫ</Link></li>
+                    <li className="text-right -translate-y-44 text-[30px] pointer-events-none"><Link to="vacancies" smooth={true} duration={500} onClick={() => setOpen(!isOpen)} className="cursor-pointer pointer-events-auto">ВАКАНСИИ</Link></li>
+                    <li className="text-right sm:-translate-x-40 -translate-x-5 -translate-y-28 text-[40px] pointer-events-none"><Link to="products" smooth={true} duration={500} onClick={() => setOpen(!isOpen)} className="cursor-pointer pointer-events-auto">ПРОДУКТЫ</Link></li>
+                    <li className=" text-[40px] pointer-events-none"> <Link to="greenshake" smooth={true} duration={500} onClick={() => setOpen(!isOpen)}className="cursor-pointer">GREENSHAKE</Link></li>
+                    <li className="[writing-mode:vertical-lr] -translate-y-20 -scale-100 text-6xl pointer-events-none"><Link to="contacts" smooth={true} duration={500} onClick={() => setOpen(!isOpen)} className="cursor-pointer pointer-events-auto">КОНТАКТЫ</Link></li>
                   </ol>  
                   </div>
                   </div>
-                </div>
-                <div className={`z-[300] fixed top-0 left-0 bg-orange min-h-screen w-full hidden`}> 
-               <div className="w-[590px] m-auto py-16 flex flex-col items-center">
-                <h3 className="text-white text-4xl tracking-tight uppercase mb-10 text-center w-72">ХОТЕЛИ БЫ 
-                РАБОТАТЬ У НАС</h3>
-                <div className="border-2 border-beige flex justify-center absolute -top-20 rotate-90">
-                        <div className=" h-full w-3 bg-dark-800
-                          border-l-[2px] border-l-beige
-                          border-t-[480px] border-t-transparent
-                          border-r-[2px] border-r-beige
-                          "></div>
-                      </div>
-                <form action="" className="font-vox mt-6">
-                  <input type="text" className="bg-white w-full text-dark-800 text-sm py-5 px-11 placeholder-dark-800 outline-none mb-5" placeholder='Ваше ФИО*'/>
-                  <input type="text" className="bg-white w-full text-dark-800 text-sm py-5 px-11 placeholder-dark-800 outline-none mb-5" placeholder='Телефон*'/>
-                  <input type="text" className="bg-white w-full text-dark-800 text-sm py-5 px-11 placeholder-dark-800 outline-none mb-5" placeholder='E-mail*'/>
-                  <input type="text" className="bg-white w-full text-dark-800 text-sm py-5 px-11 placeholder-dark-800 outline-none mb-5" placeholder='Должность*'/>
-                  <input type="text" className="bg-white w-full text-dark-800 text-sm py-5 px-11 placeholder-dark-800 outline-none mb-5" placeholder='Опыт работы в годах*'/>
-                  <div className="flex justify-center mb-5">
-                  <button className="bg-white font-bold text-dark-800 mx-auto font-vox rounded-md mt-6 py-4 w-72 inline-flex items-center justify-center relative after:absolute after:-right-6 after:h-10 after:w-9 after:bg-beige after:rounded-sm before:absolute before:-left-6 before:h-10 before:w-9 before:bg-dark-400 before:rounded-sm hover:after:translate-x-5 hover:before:-translate-x-5 transition-all delay-500">Отправить</button></div>
-              <span className="text-center block mx-auto">Нажимая кнопку отправить, вы принимаете <br /> соглашение о разглашении персональных данных</span>
-                </form>
-               </div>
-                </div>
-                <div className={`z-[300] fixed top-0 left-0 bg-orange min-h-screen w-full hidden`}> 
-               <div className="container m-auto py-16 flex flex-col items-center">
-                <h3 className="text-white text-4xl tracking-tight uppercase mb-10 text-center w-72">Как добраться?</h3>
-                <div className="border-2 border-beige flex justify-center absolute -top-20 rotate-90">
-                        <div className=" h-full w-3 bg-dark-800
-                          border-l-[2px] border-l-beige
-                          border-t-[480px] border-t-transparent
-                          border-r-[2px] border-r-beige
-                          "></div>
-                      </div>
-                    <div className="flex justify-between w-full">
-                        <div className="basis-6/12">
-                        <h4 className="text-white text-3xl tracking-tight uppercase mb-10 text-center">ВЪЕЗД: КПП 1</h4>
-                        <div className="modal-embla">
-                           {/* <EmblaCarousel slides={SLIDES} options={OPTIONS} /> */}
-                        </div>
-                      </div>
-                      <div className="basis-6/12">
-                        <h4 className="text-white text-3xl tracking-tight uppercase mb-10 text-center">ВЪЕЗД: КПП 2</h4>
-                        <div className="modal-embla">
-                           
-                        </div>
-                      </div>
-                    </div>
-               </div>
                 </div>
     </div>
    

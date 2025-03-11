@@ -15,7 +15,6 @@ export default function Advantages () {
                     window.removeEventListener('scroll', handleScroll);
                 };
             }, []);
-            // console.log(scrollPosition);
             addEventListener("scroll", (event) => {
               if(scrollPosition > 3100){
                 setOp('opacity-1')

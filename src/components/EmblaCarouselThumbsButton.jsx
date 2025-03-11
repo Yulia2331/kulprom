@@ -12,9 +12,9 @@ export const Thumb = (props) => {
       <button
         onClick={onClick}
         type="button"
-        className="embla-thumbs__slide__number"
+        className="embla-thumbs__slide__number w-full"
       >
-        {index + 1}
+        <img src={index.src} alt="" className="h-14 sm:h-[85px] w-full object-cover rounded-md"/>
       </button>
     </div>
   )

@@ -31,27 +31,28 @@ const EmblaCarousel = (props) => {
 
     emblaMainApi.on('select', onSelect).on('reInit', onSelect)
   }, [emblaMainApi, onSelect])
-
   return (
     <div className="embla">
-      <div className="embla__viewport" ref={emblaMainRef}>
-        <div className="embla__container">
+      <div className="embla__viewport flex w-full" ref={emblaMainRef}>
+        <div className="embla__container flex">
           {slides.map((index) => (
-            <div className="embla__slide" key={index}>
-              <div className="embla__slide__number">{index + 1}</div>
+            <div className=" embla__slide-one" key={index.id}>
+              <div className="embla__slide__number w-full">
+                <img src={index.src} alt="" className="w-full max-h-80 object-cover rounded-2xl"/>
+                </div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="embla-thumbs">
+      <div className="embla-thumbs mt-4">
         <div className="embla-thumbs__viewport" ref={emblaThumbsRef}>
-          <div className="embla-thumbs__container">
+          <div className="embla-thumbs__container flex gap-2">
             {slides.map((index) => (
               <Thumb
-                key={index}
-                onClick={() => onThumbClick(index)}
-                selected={index === selectedIndex}
+                key={index.id}
+                onClick={() => onThumbClick(index.id -1)}
+                selected={index.id -1 === selectedIndex}
                 index={index}
               />
             ))}

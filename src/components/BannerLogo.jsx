@@ -7,9 +7,6 @@ export default function BannerLogo () {
           setOp('opacity-100')
        }
        setTimeout(vkl, 500)
-    //    document.onclick = function() {
-    //     setOpy('-translate-y-72')
-    //    }
     const [w, setW] = useState('opacity-1 translate-y-0');
         function vkl1() {
           setW('opacity-0 -translate-y-96')
@@ -28,7 +25,6 @@ export default function BannerLogo () {
                     window.removeEventListener('scroll', handleScroll);
                 };
             }, []);
-            // console.log(scrollPosition);
             addEventListener("scroll", (event) => {
               if(scrollPosition > 240){
                 setOpy('opacity-0')

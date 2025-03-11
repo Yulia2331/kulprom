@@ -12,13 +12,7 @@ export default function Header () {
         <div className="container 2xl:px-[80px]">
           <div className="flex items-center">
             <a href="" className="flex items-center">
-            <Image
-                aria-hidden
-                src="/logo.svg"
-                alt="File icon"
-                width={70}
-                height={82}
-              />
+              <img src="/logo.svg" alt="" className="h-[82px]" />
               <span className="text-4xl tracking-tight text-beige ml-4 scale-y-125">КУЛПРОМ</span>
               </a>
               <ol className="lg:flex gap-x-8 ml-36 xl:ml-56 text-xl tracking-tight hidden">
