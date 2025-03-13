@@ -1,15 +1,15 @@
 
 'use client'
 import React, { useCallback, useEffect, useState } from 'react'
-import BannerMenu from '../components/BannerMenu'
-import BannerLogo from '../components/BannerLogo'
-import Slogan from '../components/Slogan'
-import ProductsBlock from '../components/ProductsBlock'
-import AdvantagesBlock from '../components/AdvantagesBlock'
-import FormBlock from '../components/FormBlock'
-import Partners from '../components/Partners'
-import Vacancies from '../components/Vacancies'
-import Footer from '../components/Footer'
+import BannerMenu from './components/BannerMenu'
+import BannerLogo from './components/BannerLogo'
+import Slogan from './components/Slogan'
+import ProductsBlock from './components/ProductsBlock'
+import AdvantagesBlock from './components/AdvantagesBlock'
+import FormBlock from './components/FormBlock'
+import Partners from './components/Partners'
+import Vacancies from './components/Vacancies'
+import Footer from './components/Footer'
 import Image from "next/image";
 import { Link, Element } from 'react-scroll';
 
@@ -84,6 +84,7 @@ const [isOpen, setOpen] = useState();
           </div>  
         </div>
       </main>
+      <Element name="header">
       <header className="bg-orange py-5 border-t-2 border-t-beige lg:border-0 relative z-20">
                 <div className="container 2xl:px-[80px]">
                   <div className="flex items-center">
@@ -121,6 +122,7 @@ const [isOpen, setOpen] = useState();
                     </div>
                 </div>
         </header>  
+        </Element>
         <Element name="company">
           <Slogan/>
         </Element>
@@ -140,7 +142,7 @@ const [isOpen, setOpen] = useState();
         <Element name="contacts"> 
           <Footer/> 
         </Element> 
-        <div className={`z-[300] fixed top-0 left-0 bg-orange min-h-screen w-full ${isOpen ? '' : 'hidden'}`}>
+        <div className={`z-[300] fixed top-0 left-0 bg-orange min-h-screen w-full transition-all duration-500 ${isOpen ? '' : 'opacity-0 -translate-x-[100%]'}`}>
                 <div className="min-h-screen h-screen overflow-y-scroll overflow-x-hidden"> 
                   <div className="relative ">
                   <div className="overflow-hidden max-h-[1000px] min-h-[750px] absolute top-0 left-5 flex justify-between w-full">

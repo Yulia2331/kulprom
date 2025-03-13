@@ -7,24 +7,21 @@ export default function Vacancies () {
      
 
         const [op, setOp] = useState('opacity-0 -translate-y-96');
-const [scrollPosition, setScrollPosition] = useState(0);
-            const handleScroll = () => {
-                const position = window.pageYOffset;
-                setScrollPosition(position);
-            };
-            
-            useEffect(() => {
-                window.addEventListener('scroll', handleScroll, { passive: true });
-            
-                return () => {
-                    window.removeEventListener('scroll', handleScroll);
-                };
+ const onScroll = useCallback(event => {
+                const { pageYOffset, scrollY } = window;
+                if(scrollY > 5650 || pageYOffset > 5650){
+                  setOp('opacity-1 -translate-y-2')
+                        }
             }, []);
-            addEventListener("scroll", (event) => {
-              if(scrollPosition > 5650){
-                setOp('opacity-1 -translate-y-2')
+          
+            useEffect(() => {
+              //add eventlistener to window
+              window.addEventListener("scroll", onScroll, { passive: true });
+              // remove event on unmount to prevent a memory leak with the cleanup
+              return () => {
+                 window.removeEventListener("scroll", onScroll, { passive: true });
               }
-            });
+            }, []);
             const [isOpen, setOpen] = useState();
 
             const OPTIONS = {}
@@ -50,9 +47,9 @@ const [scrollPosition, setScrollPosition] = useState(0);
               <button className="bg-white font-bold text-dark-800 mx-auto font-vox rounded-md mt-6 py-4 w-72 md:w-96 inline-flex items-center justify-center relative after:absolute after:-right-6 after:h-10 after:w-9 after:bg-orange after:rounded-sm before:absolute before:-left-6 before:h-10 before:w-9 before:bg-beige before:rounded-sm hover:after:translate-x-5 hover:before:-translate-x-5 transition-all delay-500" onClick={() => setOpen(!isOpen)}>Заполнить анкету</button>
             </div>
           </div>
-          <div className={`z-[300] fixed top-0 left-0 bg-orange min-h-screen w-full overflow-x-hidden overflow-y-scroll max-h-full ${isOpen ? '' : 'hidden'}`}> 
+          <div className={`z-[300] fixed top-0 left-0 bg-orange min-h-screen w-full overflow-x-hidden overflow-y-scroll max-h-full transition-all duration-500 ${isOpen ? '' : 'opacity-0 -translate-x-[100%]'}`}> 
                 <div className="w-[50px] bg-dark-400 z-20  absolute top-0  right-0 ">
-                        <div className="relative border-b-2 border-beige">
+                        <div className="relative border-b-2 border-beige cursor-pointer" onClick={() => setOpen(!isOpen)}>
                         <div className="absolute -top-2 -left-[29px] border-t-[47px] border-t-transparent border-r-[24px] border-r-beige rotate-[18deg] "></div>
                         <div className="absolute top-[31px] -left-[32.7px] border-b-[43px] border-b-transparent border-r-[30px] border-r-beige   -rotate-[9.5deg]"></div>
                           <div className="h-0 w-0

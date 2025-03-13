@@ -11,26 +11,21 @@ export default function Slogan () {
          setBot('translate-y-0')
          setW('opacity-1')
       }
-
-      const [scrollPosition, setScrollPosition] = useState(0);
-      const handleScroll = () => {
-          const position = window.pageYOffset;
-          setScrollPosition(position);
-      };
-      
-      useEffect(() => {
-          window.addEventListener('scroll', handleScroll, { passive: true });
-      
-          return () => {
-              window.removeEventListener('scroll', handleScroll);
-          };
-      }, []);
-            
-      addEventListener("scroll", (event) => {
-        if(scrollPosition > 800){
-          setTimeout(vkl, 500)
-        }
-      });
+       const onScroll = useCallback(event => {
+                const { pageYOffset, scrollY } = window;
+                if(scrollY > 800 || pageYOffset > 800){
+                          setTimeout(vkl, 500)
+                        }
+            }, []);
+          
+            useEffect(() => {
+              //add eventlistener to window
+              window.addEventListener("scroll", onScroll, { passive: true });
+              // remove event on unmount to prevent a memory leak with the cleanup
+              return () => {
+                 window.removeEventListener("scroll", onScroll, { passive: true });
+              }
+            }, []);
     return (
       <section className="bg-orange relative z-30 pb-48"> 
         <div id="block" className="lg:container 2xl:px-[80px]">

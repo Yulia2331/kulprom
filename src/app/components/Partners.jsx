@@ -2,25 +2,21 @@
 import React, { useCallback, useEffect, useState } from 'react'
 export default function Partners () {
         const [op, setOp] = useState('opacity-0 -translate-y-96');
-    const [scrollPosition, setScrollPosition] = useState(0);
-                const handleScroll = () => {
-                    const position = window.pageYOffset;
-                    setScrollPosition(position);
-                };
-                
-                useEffect(() => {
-                    window.addEventListener('scroll', handleScroll, { passive: true });
-                
-                    return () => {
-                        window.removeEventListener('scroll', handleScroll);
-                    };
-                }, []);
-                // console.log(scrollPosition);
-                addEventListener("scroll", (event) => {
-                  if(scrollPosition > 4750){
-                    setOp('opacity-1 translate-y-0')
-                  }
-                });
+       const onScroll = useCallback(event => {
+                            const { pageYOffset, scrollY } = window;
+                            if(scrollY > 4750 || pageYOffset > 4750){
+                              setOp('opacity-1 translate-y-0')
+                                    }
+                        }, []);
+                      
+                        useEffect(() => {
+                          //add eventlistener to window
+                          window.addEventListener("scroll", onScroll, { passive: true });
+                          // remove event on unmount to prevent a memory leak with the cleanup
+                          return () => {
+                             window.removeEventListener("scroll", onScroll, { passive: true });
+                          }
+                        }, []);
     return (
         <section className="bg-dark-400 md:bg-orange pt-20 md:py-20 relative z-40 flex justify-center
                 md:after:border-l-[1100px] after:border-l-transparent

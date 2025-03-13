@@ -66,9 +66,9 @@ export default function Footer () {
                       </div>
                   </div>
                 </div>
-                <div className={`z-[300] fixed top-0 left-0 bg-orange min-h-screen w-full overflow-x-hidden overflow-y-scroll max-h-full ${isOpen ? '' : 'hidden'}`}> 
+                <div className={`z-[300] fixed top-0 left-0 bg-orange min-h-screen w-full overflow-x-hidden overflow-y-scroll max-h-full transition-all duration-500 ${isOpen ? '' : 'opacity-0 -translate-x-[100%]'}`}> 
                 <div className="w-[50px] bg-dark-400 z-20 absolute top-0  right-0 ">
-                        <div className="relative border-b-2 border-beige">
+                        <div className="relative border-b-2 border-beige cursor-pointer" onClick={() => setOpen(!isOpen)}>
                         <div className="absolute -top-2 -left-[29px] border-t-[47px] border-t-transparent border-r-[24px] border-r-beige rotate-[18deg] "></div>
                         <div className="absolute top-[31px] -left-[32.7px] border-b-[43px] border-b-transparent border-r-[30px] border-r-beige   -rotate-[9.5deg]"></div>
                           <div className="h-0 w-0

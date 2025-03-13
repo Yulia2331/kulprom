@@ -2,24 +2,21 @@
 import React, { useCallback, useEffect, useState } from 'react'
 export default function Advantages () {
       const [op, setOp] = useState('opacity-0');
-        const [scrollPosition, setScrollPosition] = useState(0);
-            const handleScroll = () => {
-                const position = window.pageYOffset;
-                setScrollPosition(position);
-            };
-            
-            useEffect(() => {
-                window.addEventListener('scroll', handleScroll, { passive: true });
-            
-                return () => {
-                    window.removeEventListener('scroll', handleScroll);
-                };
-            }, []);
-            addEventListener("scroll", (event) => {
-              if(scrollPosition > 3100){
-                setOp('opacity-1')
-              }
-            });
+         const onScroll = useCallback(event => {
+                        const { pageYOffset, scrollY } = window;
+                        if(scrollY > 3100 || pageYOffset > 3100){
+                          setOp('opacity-1')
+                                }
+                    }, []);
+                  
+                    useEffect(() => {
+                      //add eventlistener to window
+                      window.addEventListener("scroll", onScroll, { passive: true });
+                      // remove event on unmount to prevent a memory leak with the cleanup
+                      return () => {
+                         window.removeEventListener("scroll", onScroll, { passive: true });
+                      }
+                    }, []);
     return (
 
 <div className="basis-5/12 mt-24">
