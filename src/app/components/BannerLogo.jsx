@@ -4,39 +4,49 @@ import { Link, Element } from 'react-scroll'
 export default function BannerLogo () {
       const [op, setOp] = useState('opacity-0');
       const [opy, setOpy] = useState('opacity-1');
+      // const [y, setY] = useState();
        function vkl() {
           setOp('opacity-100')
        }
-       setTimeout(vkl, 500)
-    const [w, setW] = useState('opacity-1 translate-y-0');
-        function vkl1() {
-          setW('opacity-0 -translate-y-96')
-       }
-        const onScroll = useCallback(event => {
-          const { pageYOffset, scrollY } = window;
-          if(scrollY > 440 || pageYOffset > 440){
-                    setOpy('opacity-0 pointer-events-none')
-                    setTimeout(vkl1, 10)
-                  }
-      }, []);
+       setTimeout(vkl, 300)
+    // const [w, setW] = useState('opacity-1 translate-y-0');
+    //     function vkl1() {
+    //       setW('opacity-0 -translate-y-96')
+    //    }
+    //     const onScroll = useCallback(event => {
+    //       const { pageYOffset, scrollY } = window;
+    //       setY(scrollY);
+    //       setW(`translate-y-[${scrollY/2}px]`)
+    //       // if(scrollY > 440 || pageYOffset > 440){
+    //       //           setOpy('opacity-0 pointer-events-none')
+    //       //           setTimeout(vkl1, 10)
+    //       //         }
+    //   }, []);
     
-      useEffect(() => {
-        //add eventlistener to window
-        window.addEventListener("scroll", onScroll, { passive: true });
-        // remove event on unmount to prevent a memory leak with the cleanup
-        return () => {
-           window.removeEventListener("scroll", onScroll, { passive: true });
-        }
-      }, []);
+      // useEffect(() => {
+      //   //add eventlistener to window
+      //   window.addEventListener("scroll", onScroll, { passive: true });
+      //   // remove event on unmount to prevent a memory leak with the cleanup
+      //   return () => {
+      //      window.removeEventListener("scroll", onScroll, { passive: true });
+      //   }
+      // }, []);
+
+    //   function ggg() {
+    //     setW(`-translate-y-[${y}]px`)
+    //  }
+
+    //   console.log(y);
+    //   console.log(w);
     return (
       <div className="flex justify-center items-center flex-col 2xl:px-20 px-10 lg:py-0 py-8 z-20">
                 <img className={`w-full xl:max-w-none max-w-64 sm:max-w-96 transition-all duration-1000 ease-in-out ${op}`} src="/logo.svg" alt=""/>
                 <h1 className={`tracking-tight max-w-80 text-3xl sm:text-5xl text-center text-beige pt-8 lg:hidden scale-y-125 transition-all duration-1000 ease-in-out delay-500 ${op}`}>ПРОМЫШЛЕННАЯ КУЛИНАРИЯ</h1>
                 <span className={`flex justify-center text-xl sm:text-2xl md:text-3xl xl:text-4xl mt-8 font-normal text-beige font-vox transition-all duration-1000 ease-in-out delay-500 ${op}`}>создаем вкус будущего</span>
-               <Link to="header" smooth={true} duration={1000} onClick={vkl1} className={`mt-10 lg:absolute lg:-bottom-[25%] xl:-bottom-[21%] lg:left-1/2 lg:-translate-x-5 xl:-translate-x-8 z-10 transition-all duration-1000 ${opy}`}>
+               <Link to="header" smooth={true} duration={1000}  className={`z-50 mt-10 lg:absolute lg:-bottom-[25%] xl:-bottom-[21%] lg:left-1/2 lg:-translate-x-5 xl:-translate-x-8 transition-all duration-1000`}>
                   <img src="/banner-arr.svg" alt="" className="lg:h-[80px] lg:w-[80px] xl:h-[90px] xl:w-[90px]"/>
                 </Link>
-                <img src="/cook.svg" alt="" className={`absolute hidden lg:block lg:w-[360px] lg:-bottom-[88%] lg:left-1/3 xl:w-[460px] xl:-bottom-[85%] xl:left-1/3 transition-all duration-[1300ms] ${w}`}/>
+                <img src="/cook.svg" alt="" className={`absolute hidden lg:block lg:w-[360px] lg:-bottom-[88%] lg:left-1/3 xl:w-[460px] xl:-bottom-[85%] xl:left-1/3 transition-all duration-[1300ms]`}/>
                 </div>
 
 )

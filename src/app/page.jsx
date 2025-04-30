@@ -15,8 +15,45 @@ import { Link, Element } from 'react-scroll';
 
 
 export default function Home() {
-  
+  const [tr, setTr] = useState('-translate-x-72 -translate-y-56');
+  const [sq, setSq] = useState('translate-y-96');
+  const [rect, setRect] = useState('-translate-y-56 translate-x-96');
+  function vkl() {
+    setTr('translate-x-0 translate-y-10')
+    setSq('translate-y-0')
+    setRect('translate-x-0 translate-y-0')
+ }
+ setTimeout(vkl, 450)
 const [isOpen, setOpen] = useState();
+const [y, setY] = useState();
+const [gap, setGap] = useState(0);
+ const [ww, setWw] = useState();
+      //   function vkl1() {
+      //     setW('opacity-0 -translate-y-96')
+      //  }
+        const onScroll = useCallback(event => {
+          const { pageYOffset, scrollY } = window;
+          setY(scrollY);
+          // setWw(``)
+          // if(scrollY > 440 || pageYOffset > 440){
+          //           setOpy('opacity-0 pointer-events-none')
+          //           setTimeout(vkl1, 10)
+          //         }
+      }, []);
+    
+      useEffect(() => {
+        //add eventlistener to window
+        window.addEventListener("scroll", onScroll, { passive: true });
+        // remove event on unmount to prevent a memory leak with the cleanup
+        return () => {
+           window.removeEventListener("scroll", onScroll, { passive: true });
+        }
+      }, []);
+      function ggg() {
+        setGap(gap+1)
+         }
+      console.log(y);
+      console.log(gap);
   return (
     <div className="overflow-hidden text-white text-lg scroll-smooth relative">
       <main className="w-screen bg-beige flex justify-center items-center justify-items-center py-24 lg:py-32 xl:py-36 relative" >
@@ -33,15 +70,15 @@ const [isOpen, setOpen] = useState();
          <BannerLogo/>
         <BannerMenu/>
         <div className="hidden lg:block">
-          <div className="absolute left-2/4 translate-x-28 top-96 z-20 flex flex-col items-end">
+          <div className={`hover:scale-125 hover:-rotate-[-90deg] absolute left-2/4 translate-x-28 top-96 z-20 flex flex-col items-end transition-all duration-[1s] ease-in-out ${sq}`}>
             <span className="h-2 w-12 bg-beige"></span>
             <span className="h-4 w-5 bg-dark-800 mt-3"></span>
           </div>
-                <div className="w-0 h-0 -rotate-[80deg] absolute left-2/4 translate-y-10 z-20
+                <div className={`hover:-rotate-[121deg] w-0 h-0 -rotate-[80deg] absolute left-2/4  z-20
     border-t-[50px] border-t-transparent
       border-l-[129px] border-l-beige
-      border-b-[240px] border-b-transparent"></div>
-      <span className="absolute -right-2 bottom-20 h-16 w-36 bg-beige -rotate-[35deg] z-20"></span>
+      border-b-[240px] border-b-transparent transition-all duration-[.8s] ease-in-out ${tr}`}></div>
+      <span className={`absolute -right-2 bottom-20 h-16 w-36 bg-beige hover:scale-75 hover:-rotate-[-30deg] -rotate-[35deg] z-20 transition-all duration-[.8s] ease-in-out ${rect}`}></span>
     </div>
     <div className="absolute w-[6%] sm:w-[120px] md:w-[150px] lg:w-[200px] xl:w-[250px] 2xl:w-[276px] h-[1060px] -right-[5%] sm:-right-[20%] -top-[20%] z-0 lg:-top-[25%] bg-dark-400 overflow-hidden"></div>
     <div className="h-0 w-0
@@ -84,6 +121,13 @@ const [isOpen, setOpen] = useState();
           </div>  
         </div>
       </main>
+      {/* <div className={`h-screen w-screen bg-orange z-40 relative`}>
+         <Link to="header" smooth={true} duration={1000}  className={`z-50 mt-10 lg:absolute lg:-top-[25%] xl:-top-[21%] lg:left-1/2 lg:-translate-x-5 xl:-translate-x-8 transition-all duration-1000 `}>
+                          <img src="/banner-arr.svg" alt="" className="lg:h-[80px] lg:w-[80px] xl:h-[90px] xl:w-[90px]"/>
+                        </Link>
+        <img src="/cook.svg" alt="" className={`z-10 absolute hidden lg:block -top-32 left-1/3 transition-all ${ww}`}/>
+      </div> */}
+      <div className="hidden1">
       <Element name="header">
       <header className="bg-orange py-5 border-t-2 border-t-beige lg:border-0 relative z-20">
                 <div className="container 2xl:px-[80px]">
@@ -142,6 +186,7 @@ const [isOpen, setOpen] = useState();
         <Element name="contacts"> 
           <Footer/> 
         </Element> 
+        </div>
         <div className={`z-[300] fixed top-0 left-0 bg-orange min-h-screen w-full transition-all duration-500 ${isOpen ? '' : 'opacity-0 -translate-x-[100%]'}`}>
                 <div className="min-h-screen h-screen overflow-y-scroll overflow-x-hidden"> 
                   <div className="relative ">
