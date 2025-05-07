@@ -44,7 +44,7 @@ export default function Vacancies () {
             <h2 className="text-white text-4xl sm:text-6xl text-center md:text-left tracking-tight uppercase mb-10 md:mb-20 ">ВАКАНСИИ</h2>
             <EmblaVacancies slides={SLIDE_COUNT} options={OPTIONS} />
             <div className="flex justify-center mt-6 pb-20">
-              <button className="bg-white font-bold text-dark-800 mx-auto font-vox rounded-md mt-6 py-4 w-72 md:w-96 inline-flex items-center justify-center relative after:absolute after:-right-6 after:h-10 after:w-9 after:bg-orange after:rounded-sm before:absolute before:-left-6 before:h-10 before:w-9 before:bg-beige before:rounded-sm hover:after:translate-x-5 hover:before:-translate-x-5 transition-all delay-500" onClick={() => setOpen(!isOpen)}>Заполнить анкету</button>
+              <button className="bg-white font-bold text-dark-800 mx-auto font-vox rounded-md mt-6 py-4 w-72 md:w-96 inline-flex items-center justify-center relative after:absolute after:-right-6 after:h-10 after:w-9 after:bg-orange after:rounded-sm before:absolute before:-left-6 before:h-10 before:w-9 before:bg-beige before:rounded-sm hover:after:translate-x-5 hover:before:-translate-x-5 transition-all delay-500 before:transition-all after:transition-all" onClick={() => setOpen(!isOpen)}>Заполнить анкету</button>
             </div>
           </div>
           <div className={`z-[300] fixed top-0 left-0 bg-orange min-h-screen w-full overflow-x-hidden overflow-y-scroll max-h-full transition-all duration-500 ${isOpen ? '' : 'opacity-0 -translate-x-[100%]'}`}> 
@@ -82,7 +82,7 @@ export default function Vacancies () {
                   <input type="text" className="bg-white w-full text-dark-800 text-sm py-5 px-11 placeholder-dark-800 outline-none mb-5" placeholder='Должность*'/>
                   <input type="text" className="bg-white w-full text-dark-800 text-sm py-5 px-11 placeholder-dark-800 outline-none mb-5" placeholder='Опыт работы в годах*'/>
                   <div className="flex justify-center mb-5">
-                  <button className="bg-white font-bold text-dark-800 mx-auto font-vox rounded-md mt-6 py-4 w-72 inline-flex items-center justify-center relative after:absolute after:-right-6 after:h-10 after:w-9 after:bg-beige after:rounded-sm before:absolute before:-left-6 before:h-10 before:w-9 before:bg-dark-400 before:rounded-sm hover:after:translate-x-5 hover:before:-translate-x-5 transition-all delay-500">Отправить</button></div>
+                  <button className="bg-white font-bold text-dark-800 mx-auto font-vox rounded-md mt-6 py-4 w-72 inline-flex items-center justify-center relative after:absolute after:-right-6 after:h-10 after:w-9 after:bg-beige after:rounded-sm before:absolute before:-left-6 before:h-10 before:w-9 before:bg-dark-400 before:rounded-sm hover:after:translate-x-5 hover:before:-translate-x-5 transition-all delay-500 before:transition-all after:transition-all">Отправить</button></div>
               <span className="text-center block mx-auto">Нажимая кнопку отправить, вы принимаете <br /> соглашение о разглашении персональных данных</span>
                 </form>
                </div>

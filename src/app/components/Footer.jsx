@@ -34,7 +34,7 @@ export default function Footer () {
                           <a href=""><img src="/youtube.svg" alt="" /></a>
                           <a href=""><img src="/vk.svg" alt="" /></a>
                         </div>
-                      <button className="bg-dark-800 font-bold lg:text-white mx-auto font-vox rounded-md py-4 w-72 inline-flex items-center justify-center relative after:absolute after:-right-6 after:h-10 after:w-9 after:bg-orange after:rounded-sm before:absolute before:-left-6 before:h-10 before:w-9 before:bg-beige before:rounded-sm hover:after:translate-x-5 hover:before:-translate-x-5 transition-all delay-500" onClick={() => setOpen(!isOpen)}>Как проехать</button>
+                      <button className="bg-dark-800 font-bold lg:text-white mx-auto font-vox rounded-md py-4 w-72 inline-flex items-center justify-center relative after:absolute after:-right-6 after:h-10 after:w-9 after:bg-orange after:rounded-sm before:absolute before:-left-6 before:h-10 before:w-9 before:bg-beige before:rounded-sm hover:after:translate-x-5 hover:before:-translate-x-5 transition-all delay-500 before:transition-all after:transition-all" onClick={() => setOpen(!isOpen)}>Как проехать</button>
                     </div>
                   </div>
                   <div className="lg:hidden flex flex-col items-center">
@@ -42,7 +42,7 @@ export default function Footer () {
                           <a href=""><img src="/youtube.svg" alt="" /></a>
                           <a href=""><img src="/vk.svg" alt="" /></a>
                         </div>
-                      <button className="bg-dark-800 font-bold text-beige mx-auto font-vox rounded-md py-4 w-72 inline-flex items-center justify-center relative after:absolute after:-right-6 after:h-10 after:w-9 after:bg-beige after:rounded-sm before:absolute before:-left-6 before:h-10 before:w-9 before:bg-dark-400 before:rounded-sm hover:after:translate-x-5 hover:before:-translate-x-5 transition-all delay-500" onClick={() => setOpen(!isOpen)}>Как проехать</button>
+                      <button className="bg-dark-800 font-bold text-beige mx-auto font-vox rounded-md py-4 w-72 inline-flex items-center justify-center relative after:absolute after:-right-6 after:h-10 after:w-9 after:bg-beige after:rounded-sm before:absolute before:-left-6 before:h-10 before:w-9 before:bg-dark-400 before:rounded-sm hover:after:translate-x-5 hover:before:-translate-x-5 transition-all delay-500 before:transition-all after:transition-all" onClick={() => setOpen(!isOpen)}>Как проехать</button>
                   </div>
                   <div className="mt-16 flex justify-between flex-col xl:flex-row">
                     <div className="flex basis-9/12 justify-between w-full flex-col lg:flex-row items-center lg:items-start">

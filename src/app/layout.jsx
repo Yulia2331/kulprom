@@ -23,6 +23,7 @@ export default function RootLayout({ children }) {
       <head>
         <title>Кулпром</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <link rel="icon" href="/logo.svg" sizes="any" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

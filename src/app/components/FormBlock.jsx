@@ -26,7 +26,7 @@ export default function FormBlock () {
                       <input type="text" className="bg-transparent border border-white rounded-md py-5 px-8 w-full mb-5 placeholder-white" placeholder="Телефон*"/>
                       <input type="text" className="bg-transparent border border-white rounded-md py-5 px-8 w-full mb-5 placeholder-white" placeholder="E-mail*"/>
                       <span className="text-center max-w-80 block mx-auto">Нажимая кнопку отправить, вы принимаете соглашение о разглашении персональных данных</span>
-                      <button className="bg-dark-400 text-lg font-vox font-bold rounded-md mt-6 py-4 w-72 md:w-96 inline-flex items-center justify-center relative after:absolute after:-right-6 after:h-10 after:w-9 after:bg-dark-800 md:after:bg-orange after:rounded-sm before:absolute before:-left-6 before:h-10 before:w-9 before:bg-beige before:rounded-sm hover:after:translate-x-5 hover:before:-translate-x-5 transition-all delay-500">Оставить заявку</button>
+                      <button className="bg-dark-400 text-lg font-vox font-bold rounded-md mt-6 py-4 w-72 md:w-96 inline-flex items-center justify-center relative after:absolute after:-right-6 after:h-10 after:w-9 after:bg-dark-800 md:after:bg-orange after:rounded-sm before:absolute before:-left-6 before:h-10 before:w-9 before:bg-beige before:rounded-sm hover:after:translate-x-5 hover:before:-translate-x-5 transition-all delay-500 before:transition-all after:transition-all">Оставить заявку</button>
                     </form>
                     <form action="" className={`font-vox text-sm flex flex-col items-center w-full text-white ${suppliers ? '' : 'hidden'}`}>
                       <span>Поставщики</span>
@@ -34,7 +34,7 @@ export default function FormBlock () {
                       <input type="text" className="bg-transparent border border-white rounded-md py-5 px-8 w-full mb-5 placeholder-white" placeholder="Телефон*"/>
                       <input type="text" className="bg-transparent border border-white rounded-md py-5 px-8 w-full mb-5 placeholder-white" placeholder="E-mail*"/>
                       <span className="text-center max-w-80 block mx-auto">Нажимая кнопку отправить, вы принимаете соглашение о разглашении персональных данных</span>
-                      <button className="bg-dark-400 text-lg font-vox font-bold rounded-md mt-6 py-4 w-72 md:w-96 inline-flex items-center justify-center relative after:absolute after:-right-6 after:h-10 after:w-9 after:bg-dark-800 md:after:bg-orange after:rounded-sm before:absolute before:-left-6 before:h-10 before:w-9 before:bg-beige before:rounded-sm hover:after:translate-x-5 hover:before:-translate-x-5 transition-all delay-500">Оставить заявку</button>
+                      <button className="bg-dark-400 text-lg font-vox font-bold rounded-md mt-6 py-4 w-72 md:w-96 inline-flex items-center justify-center relative after:absolute after:-right-6 after:h-10 after:w-9 after:bg-dark-800 md:after:bg-orange after:rounded-sm before:absolute before:-left-6 before:h-10 before:w-9 before:bg-beige before:rounded-sm hover:after:translate-x-5 hover:before:-translate-x-5 transition-all delay-500 before:transition-all after:transition-all">Оставить заявку</button>
                     </form>
                     </div>
                     <div className="hidden md:block">

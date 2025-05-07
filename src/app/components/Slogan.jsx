@@ -1,19 +1,34 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { Link, Element } from 'react-scroll'
+import { useRef } from 'react'
 export default function Slogan () {
      const [tr, setTr] = useState('-translate-x-72 -translate-y-56');
      const [kv, setKv] = useState('translate-x-72 -translate-y-52');
      const [bot, setBot] = useState('translate-y-72');
-     const [w, setW] = useState('opacity-0');
+     const [scel, setScel] = useState('scale-50');
+     const [rol, setRol] = useState('-translate-y-72 -translate-x-72');
+     const [bey, setBey] = useState('-translate-y-72 -translate-x-72');
+     const [vkus, setVkus] = useState('translate-y-36 -translate-x-72');
+     const [gol, setGol] = useState('translate-y-10 translate-x-36');
       function vkl() {
          setTr('translate-x-0')
          setKv('translate-x-0')
          setBot('translate-y-0')
-         setW('opacity-1')
+         setScel('scale-100')
+         setRol('-translate-y-40 -translate-x-24 sm:-translate-y-56 sm:-translate-x-28 lg:-translate-y-20 lg:-translate-x-32')
+         setBey('')
+         setVkus('lg:-translate-x-16')
+         setGol('')
       }
+      // const ref = useRef();
+      // useEffect(() => {
+      //   const rect = ref.current.getBoundingClientRect();
+      //   console.log(rect.y);
+      // });
+
        const onScroll = useCallback(event => {
                 const { pageYOffset, scrollY } = window;
-                if(scrollY > 800 || pageYOffset > 800){
+                if(scrollY > 1300 || pageYOffset > 1300){
                           setTimeout(vkl, 500)
                         }
             }, []);
@@ -26,8 +41,10 @@ export default function Slogan () {
                  window.removeEventListener("scroll", onScroll, { passive: true });
               }
             }, []);
+
+
     return (
-      <section className="bg-orange relative z-30 pb-48"> 
+      <section className="bg-orange relative z-30 pb-48 pt-32"> 
         <div id="block" className="lg:container 2xl:px-[80px]">
          <div className="flex flex-col lg:flex-row items-center justify-between pb-0 pt-12 lg:py-20 lg:pt-32 relative">
                    <div className="container basis-6/12 relative z-30  lg:mb-0 -mb-28 flex flex-col items-center lg:items-start">
@@ -35,18 +52,18 @@ export default function Slogan () {
                      <h2 className="text-white text-4xl lg:text-6xl tracking-tight uppercase whitespace-nowrap [writing-mode:vertical-lr] lg:[writing-mode:horizontal-tb] -scale-100 lg:scale-100 mr-8">О компании</h2>
                      <p className="text-beige lg:my-14 max-w-xl font-vox font-bold z-40">Figma ipsum component variant main layer. Stroke bullet comment ipsum boolean reesizing vector rotate strikethrough horizontal. Ipsum flatten figjam outline polygon main edit library blur subtract. Vector outline asset vector follower bold. Asset follower layout star scale follower shadow inspect link distribute. Stroke strikethrough content move frame. Asset hand union library layout. Export background variant.</p>
                      </div>
-                     <Link to="contacts" smooth={true} duration={500} href="" className="bg-dark-800 font-vox font-bold rounded-md py-4 w-72 md:w-96 inline-flex items-center justify-center relative after:absolute after:-right-6 after:h-10 after:w-9 after:bg-beige lg:after:bg-dark-400 after:rounded-sm before:absolute before:-left-6 before:h-10 before:w-9 before:bg-orange lg:before:bg-beige before:rounded-sm hover:after:translate-x-5 hover:before:-translate-x-5 transition-all delay-500 z-50 translate-y-40 lg:translate-y-0">Контакты</Link>    
+                     <Link to="contacts" smooth={true} duration={500} href="" className="bg-dark-800 font-vox font-bold rounded-md py-4 w-72 md:w-96 inline-flex items-center justify-center relative after:absolute after:-right-6 after:h-10 after:w-9 after:bg-beige lg:after:bg-dark-400 after:rounded-sm before:absolute before:-left-6 before:h-10 before:w-9 before:bg-orange lg:before:bg-beige before:rounded-sm hover:after:translate-x-5 hover:before:-translate-x-5 before:transition-all after:transition-all transition-all delay-500 z-50 translate-y-40 lg:translate-y-0">Контакты</Link>    
                    </div>
 <div className="after:border-l-[520px] after:border-l-transparent
 after:border-t-[200px]  after:border-t-orange 
 after:border-r-[520px]  after:border-r-transparent after:-bottom-[190px] z-20 after:absolute relative lg:border-0 flex justify-center items-center lg:hidden"></div>
 <div className="bg-dark-400 pt-[600px] lg:bg-transparent w-full flex flex-col lg:basis-6/12 h-96 py-64 lg:py-0 text-4xl tracking-tight uppercase z-10 pb-[500px]">
 <div className={`flex flex-col items-center justify-center container max-w-96 sm:max-w-[550px] lg:static relative transition-all duration-100 `}>
-<span className={`z-30 rotate-[40deg] -translate-y-40 -translate-x-24 sm:-translate-y-56 sm:-translate-x-28 lg:-translate-y-20 lg:-translate-x-32 transition-all duration-300 ${w}`}>Роллом</span>
-<span className={`z-30 rotate-[40deg] absolute left-72 sm:left-96 lg:right-28 bottom-0 lg:bottom-80 xl:bottom-60 lg:left-auto transition-all duration-500 ${w}`}>Бей</span>
-<span className={`z-30 rotate-[10deg] absolute left-5 sm:left-28 -bottom-8 lg:bottom-48 xl:bottom-40 lg:-translate-x-16 lg:left-auto transition-all duration-700 ${w}`}>Вкусным</span>
-<span className={`z-30 absolute -bottom-36 sm:-bottom-48 lg:-bottom-2 left-2/3 lg:left-auto lg:right-0 transition-all duration-1000 ${w}`}>Голод</span>
-<span className="h-[263px] w-[263px] sm:h-[363px] sm:w-[363px] lg:h-[442px] lg:w-[442px] rounded-full bg-orange z-20 absolute lg:-bottom-0 -right-1 lg:-right-14"></span>
+<span className={`z-30 rotate-[40deg]  transition-all duration-500 ${rol}`}>Роллом</span>
+<span className={`z-30 rotate-[40deg] absolute left-72 sm:left-96 lg:right-28 bottom-0 lg:bottom-80 xl:bottom-60 lg:left-auto transition-all duration-500 ${bey}`}>Бей</span>
+<span className={`z-30 rotate-[10deg] absolute left-5 sm:left-28 -bottom-8 lg:bottom-48 xl:bottom-40 lg:left-auto transition-all duration-700 ${vkus}`}>Вкусным</span>
+<span className={`z-30 absolute -bottom-36 sm:-bottom-48 lg:-bottom-2 left-2/3 lg:left-auto lg:right-0 transition-all duration-1000 ${gol}`}>Голод</span>
+<span className={`h-[263px] w-[263px] sm:h-[363px] sm:w-[363px] lg:h-[442px] lg:w-[442px] rounded-full bg-orange z-20 absolute lg:-bottom-0 -right-1 lg:-right-14 transition-all duration-1000 ${scel}`}></span>
 <div className={`transition-all duration-1000 w-0 h-0 -rotate-[80deg] absolute left-[20%] -bottom-20 -translate-y-4 sm:left-40 sm:-bottom-14  lg:left-2/3 lg:bottom-48 scale-100 sm:scale-150 lg:scale-[1.7] xl:scale-[2] z-20
 border-t-[50px] border-t-transparent
 border-l-[129px] border-l-dark-800

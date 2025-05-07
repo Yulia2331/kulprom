@@ -4,7 +4,7 @@ export default function Advantages () {
       const [op, setOp] = useState('opacity-0');
          const onScroll = useCallback(event => {
                         const { pageYOffset, scrollY } = window;
-                        if(scrollY > 3100 || pageYOffset > 3100){
+                        if(scrollY > 3450 || pageYOffset > 3450){
                           setOp('opacity-1')
                                 }
                     }, []);

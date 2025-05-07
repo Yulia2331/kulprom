@@ -3,6 +3,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import BannerMenu from './components/BannerMenu'
 import BannerLogo from './components/BannerLogo'
+import Ani from './components/Ani'
 import Slogan from './components/Slogan'
 import ProductsBlock from './components/ProductsBlock'
 import AdvantagesBlock from './components/AdvantagesBlock'
@@ -10,6 +11,7 @@ import FormBlock from './components/FormBlock'
 import Partners from './components/Partners'
 import Vacancies from './components/Vacancies'
 import Footer from './components/Footer'
+import { ParallaxProvider } from 'react-scroll-parallax'
 import Image from "next/image";
 import { Link, Element } from 'react-scroll';
 
@@ -18,6 +20,8 @@ export default function Home() {
   const [tr, setTr] = useState('-translate-x-72 -translate-y-56');
   const [sq, setSq] = useState('translate-y-96');
   const [rect, setRect] = useState('-translate-y-56 translate-x-96');
+  const [hid, setHid] = useState('');
+  const [fix, setFix] = useState('');
   function vkl() {
     setTr('translate-x-0 translate-y-10')
     setSq('translate-y-0')
@@ -25,38 +29,31 @@ export default function Home() {
  }
  setTimeout(vkl, 450)
 const [isOpen, setOpen] = useState();
-const [y, setY] = useState();
-const [gap, setGap] = useState(0);
- const [ww, setWw] = useState();
-      //   function vkl1() {
-      //     setW('opacity-0 -translate-y-96')
-      //  }
-        const onScroll = useCallback(event => {
-          const { pageYOffset, scrollY } = window;
-          setY(scrollY);
-          // setWw(``)
-          // if(scrollY > 440 || pageYOffset > 440){
-          //           setOpy('opacity-0 pointer-events-none')
-          //           setTimeout(vkl1, 10)
-          //         }
-      }, []);
-    
-      useEffect(() => {
-        //add eventlistener to window
-        window.addEventListener("scroll", onScroll, { passive: true });
-        // remove event on unmount to prevent a memory leak with the cleanup
-        return () => {
-           window.removeEventListener("scroll", onScroll, { passive: true });
-        }
-      }, []);
-      function ggg() {
-        setGap(gap+1)
-         }
-      console.log(y);
-      console.log(gap);
+
+  const onScroll = useCallback (event => {
+                const { pageYOffset, scrollY } = window;
+                if(scrollY > 1450 || pageYOffset > 1450){
+                  setFix('fixed top-0 z-[100] w-full')
+                  setTimeout( hideBaner, 3000)
+                        }
+            }, []);
+         
+            useEffect(() => {
+              //add eventlistener to window
+              window.addEventListener("scroll", onScroll, { passive: true });
+              // remove event on unmount to prevent a memory leak with the cleanup
+              return () => {
+                 window.removeEventListener("scroll", onScroll, { passive: true });
+              }
+            }, []);
+            function hideBaner(){
+              setHid('hidden')
+            }
+
   return (
     <div className="overflow-hidden text-white text-lg scroll-smooth relative">
-      <main className="w-screen bg-beige flex justify-center items-center justify-items-center py-24 lg:py-32 xl:py-36 relative" >
+      <div className={`${hid}`}>
+      <main className="w-screen bg-beige flex justify-center items-center justify-items-center py-24 lg:py-32 xl:py-36 relative overflow-hidden" >
       <div className="container 2xl:px-[80px] z-20">
         <div className="w-full flex justify-center lg:justify-between bg-dark-400 md:py-8 xl:py-10 2xl:py-16 py-5 relative">
           <div className="overflow-hidden w-full h-full absolute bottom-0 right-0 z-10 border-2 border-beige lg:border-0">
@@ -121,14 +118,12 @@ const [gap, setGap] = useState(0);
           </div>  
         </div>
       </main>
-      {/* <div className={`h-screen w-screen bg-orange z-40 relative`}>
-         <Link to="header" smooth={true} duration={1000}  className={`z-50 mt-10 lg:absolute lg:-top-[25%] xl:-top-[21%] lg:left-1/2 lg:-translate-x-5 xl:-translate-x-8 transition-all duration-1000 `}>
-                          <img src="/banner-arr.svg" alt="" className="lg:h-[80px] lg:w-[80px] xl:h-[90px] xl:w-[90px]"/>
-                        </Link>
-        <img src="/cook.svg" alt="" className={`z-10 absolute hidden lg:block -top-32 left-1/3 transition-all ${ww}`}/>
-      </div> */}
-      <div className="hidden1">
-      <Element name="header">
+      <ParallaxProvider>
+        <Ani />
+      </ParallaxProvider>
+      </div>
+
+      <Element name="header" className={`${fix}`}>
       <header className="bg-orange py-5 border-t-2 border-t-beige lg:border-0 relative z-20">
                 <div className="container 2xl:px-[80px]">
                   <div className="flex items-center">
@@ -168,7 +163,7 @@ const [gap, setGap] = useState(0);
         </header>  
         </Element>
         <Element name="company">
-          <Slogan/>
+          <Slogan />
         </Element>
         <Element name="products">
           <ProductsBlock/>
@@ -186,7 +181,6 @@ const [gap, setGap] = useState(0);
         <Element name="contacts"> 
           <Footer/> 
         </Element> 
-        </div>
         <div className={`z-[300] fixed top-0 left-0 bg-orange min-h-screen w-full transition-all duration-500 ${isOpen ? '' : 'opacity-0 -translate-x-[100%]'}`}>
                 <div className="min-h-screen h-screen overflow-y-scroll overflow-x-hidden"> 
                   <div className="relative ">

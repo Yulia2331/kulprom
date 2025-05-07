@@ -23,22 +23,22 @@ export default function BannerMenu () {
       <div className={`lg:w-8/12 ml-26 lg:max-w-4xl pr-20 z-20 hidden lg:block`}>
       <ol className="w-full tracking-tight xl:text-6xl md:text-5xl text-4xl">
         <li className={`hover:animate-pulse hover:scale-95 pointer-events-none transition-all duration-[1s] ease-in-out ${t1}`}>
-          <Link to="company" smooth={true} duration={500} className={`cursor-pointer pointer-events-auto`}>КОМПАНИЯ</Link>
+          <Link to="company" smooth={true} duration={2500} className={`cursor-pointer pointer-events-auto`}>КОМПАНИЯ</Link>
         </li>
         <li className={`-rotate-90  2xl:text-7xl hover:animate-pulse hover:scale-95 pointer-events-none transition-all duration-[1.2s] ease-in-out ${t2}`}>
-          <Link to="partners" smooth={true} duration={500} className="cursor-pointer pointer-events-auto">ПАРТНЕРЫ</Link>
+          <Link to="partners" smooth={true} duration={2500} className="cursor-pointer pointer-events-auto">ПАРТНЕРЫ</Link>
           </li>
         <li className={`text-right  hover:animate-pulse hover:scale-95 pointer-events-none -translate-y-20 transition-all duration-[1.5s] ease-in-out ${t3}`}>
-          <Link to="vacancies" smooth={true} duration={500} className="cursor-pointer pointer-events-auto">ВАКАНСИИ</Link>
+          <Link to="vacancies" smooth={true} duration={2500} className="cursor-pointer pointer-events-auto">ВАКАНСИИ</Link>
           </li>
         <li className={`text-right -translate-y-10 hover:animate-pulse hover:scale-95 pointer-events-none transition-all duration-[1.2s] ease-in-out ${t4}`}>
-        <Link to="products" smooth={true} duration={500} className="cursor-pointer pointer-events-auto">ПРОДУКТЫ</Link>
+        <Link to="products" smooth={true} duration={2500} className="cursor-pointer pointer-events-auto">ПРОДУКТЫ</Link>
           </li>
         <li className={`translate-y-52 hover:animate-pulse hover:scale-95 pointer-events-none transition-all duration-[1.2s] ease-in-out ${t5}`}>
-          <Link to="greenshake" smooth={true} duration={500} className="cursor-pointer pointer-events-auto">GREENSHAKE</Link>
+          <Link to="greenshake" smooth={true} duration={2500} className="cursor-pointer pointer-events-auto">GREENSHAKE</Link>
           </li>
         <li className={`-rotate-90 translate-x-64 hover:animate-pulse hover:scale-95 pointer-events-none transition-all duration-[1.2s] ease-in-out ${t6}`}>
-          <Link to="contacts" smooth={true} duration={500} className="cursor-pointer pointer-events-auto">КОНТАКТЫ</Link>
+          <Link to="contacts" smooth={true} duration={2500} className="cursor-pointer pointer-events-auto">КОНТАКТЫ</Link>
           </li>
       </ol>
     </div>
